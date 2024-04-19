@@ -18,7 +18,6 @@ afterEach(() =>{
       cy.get(log.passwordInput()).type(data.Password)
       cy.get(log.submit()).click()
       cy.url().should('include', 'https://opensource-demo.orangehrmlive.com')
-      cy.wait(5000);
       cy.get(log.OptionDropDown()).click()
       cy.get(log.logout()).click()
 

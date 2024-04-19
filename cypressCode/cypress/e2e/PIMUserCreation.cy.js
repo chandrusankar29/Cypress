@@ -17,11 +17,8 @@ describe('PIMUser Creation Test Suite', () => {
       cy.get(log.passwordInput()).type(data.Password)
       cy.get(log.submit()).click()
       cy.url().should('include', 'https://opensource-demo.orangehrmlive.com')
-      cy.wait(3000)
       cy.get(PIM.PIMSection()).click()
-      cy.wait(3000)
       cy.get(PIM.AddButton()).click()
-      cy.wait(3000)
       cy.get(PIM.EmployeeID()).clear()
       cy.getRandomFourDigitNumber().then(randomNumber => {
         // Output the generated random number
@@ -32,7 +29,7 @@ describe('PIMUser Creation Test Suite', () => {
         cy.get(PIM.EmployeeID()).type(randomNumber)
       });
       cy.get(PIM.SaveButton1()).click()
-
+    
 
     }) 
   })

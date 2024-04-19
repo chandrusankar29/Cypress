@@ -17,29 +17,25 @@ describe('File upload functionality', () => {
   })
     it('Verify user able to upload the file', () => {
       //const filepath = 'HulkCypress.png';
-      cy.wait(5000);
       cy.get('input[id="file-upload"]').attachFile(filepath1)
       cy.get('[id="file-submit"]').click()
-      cy.wait(3000);
+      cy.get('#uploaded-files').get
+
     })
 
     it('Verify user able to drag and drop to upload the file', () => {
       //const filepath = 'HulkCypress.png';
-      cy.wait(5000);
       cy.get('input[id="file-upload"]')
       .selectFile('cypress/fixtures/HulkCypress.png', { subjectType: 'drag-n-drop' })
       cy.get('[id="file-submit"]').click()
-      cy.wait(3000);
+      
     })
 
     it('Verify user able to multiple file upload', () => {
       //const filepath = 'HulkCypress.png';
       cy.visit('https://davidwalsh.name/demo/multiple-file-upload.php')
-      cy.wait(5000);
       cy.get('input[id="filesToUpload"]')
       .selectFile('cypress/fixtures/HulkCypress.png','cypress/fixtures/Jordon.jpg')
-      
-      cy.wait(3000);
     })
     
    
